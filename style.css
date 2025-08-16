@@ -1,0 +1,97 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #0f0f0f;
+  /* Gradiente escuro com tons de roxo e rosa escuro */
+  background: linear-gradient(135deg, #0f0f0f 0%, #1a1a1a 50%, #0f0f0f 100%);
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Linhas neon suaves no fundo continuam */
+body::before, body::after {
+  content: '';
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle at center, rgba(255, 26, 198, 0.05), transparent 70%);
+  animation: rotate 20s linear infinite;
+  z-index: 0;
+}
+
+body::after {
+  background: radial-gradient(circle at center, rgba(0, 191, 255, 0.05), transparent 70%);
+  animation-duration: 30s;
+}
+
+@keyframes rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.container {
+  background: rgba(28, 28, 28, 0.95);
+  padding: 30px;
+  border-radius: 15px;
+  width: 500px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(0,0,0,0.5);
+  position: relative;
+  z-index: 1;
+}
+
+h1, h2, h3 {
+  color: #ff1ac6;
+  text-shadow: none; /* Neon das letras desligado */
+}
+
+button {
+  padding: 10px 20px;
+  margin: 10px 0;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.2s;
+}
+
+.answer-btn {
+  display: block;
+  width: 100%;
+  background-color: #ff1ac6;
+  color: #fff;
+  margin-bottom: 10px;
+  box-shadow: none; /* Neon desligado */
+}
+
+.answer-btn:hover {
+  background-color: #e600b3;
+}
+
+.start-btn, .restart-btn, .toggle-neon-btn {
+  background-color: #00bfff;
+  color: #fff;
+  box-shadow: none; /* Neon desligado */
+}
+
+.start-btn:hover, .restart-btn:hover, .toggle-neon-btn:hover {
+  background-color: #0099cc;
+}
+
+.result {
+  font-size: 18px;
+  margin-top: 20px;
+  color: #ffcc00;
+}
+
+.map-image {
+  width: 100%;
+  margin: 20px 0;
+  border-radius: 10px;
+  border: 2px solid #ff1ac6;
+}
